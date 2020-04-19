@@ -95,7 +95,7 @@ namespace API.Controllers
         /// <param name="highlightResource"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(Policy = nameof(Defaults.Scopes.HighlightWrite))]
+        // [Authorize(Policy = nameof(Defaults.Scopes.HighlightWrite))]
         public async Task<IActionResult> CreateHighlightAsync(HighlightResource highlightResource)
         {
             if(highlightResource == null)
@@ -121,7 +121,7 @@ namespace API.Controllers
         /// <param name="highlightResource"></param>
         /// <returns></returns>
         [HttpPut("{highlightId}")]
-        [Authorize(Policy = nameof(Defaults.Scopes.HighlightWrite))]
+        // [Authorize(Policy = nameof(Defaults.Scopes.HighlightWrite))]
         public async Task<IActionResult> UpdateHighlight(int highlightId,
                                                          [FromBody] HighlightResource highlightResource)
         {
