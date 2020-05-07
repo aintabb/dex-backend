@@ -1,8 +1,6 @@
 name: staging-deployment
 
-on: 
-  push:
-    branches: [ develop ]
+on: push
 
 jobs:
   build:
@@ -30,6 +28,6 @@ jobs:
 
       # docker compose up
       - name: Build the docker-compose stack
-        run: docker-compose -f docker-compose.staging.yml up 
+        run: docker-compose -f docker-compose.staging.yml build 
       - name: Check running containers
         run: docker ps -a
