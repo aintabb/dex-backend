@@ -29,5 +29,5 @@ jobs:
           host: ${{ secrets.STAGING_VPS_IP }}
           username: ${{ secrets.STAGING_VPS_USERNAME }}
           password: ${{ secrets.STAGING_VPS_PASSWORD }}
-          script: cd ~/docker_compose && ls
+          script: cd ~/docker_compose && export STAGING_CONNECTION_STRING=STAGING_CONNECTION_STRING && export STAGING_API_FRONTEND_CLIENT_ID=STAGING_API_FRONTEND_CLIENT_ID && export STAGING_API_FRONTEND_CLIENT_SECRET=STAGING_API_FRONTEND_CLIENT_SECRET && export STAGING_DATABASE_PASSWORD=STAGING_DATABASE_PASSWORD && export STAGING_IDENTITY_APPLICATIONS=STAGING_IDENTITY_APPLICATIONS && docker-compose up --build
       
