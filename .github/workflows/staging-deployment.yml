@@ -18,5 +18,5 @@ jobs:
       - name: Run docker compose build
         run: docker-compose -f docker-compose.staging.yml build 
       - name: Push docker images to dockerhub
-        run: docker-compose push
+        run: docker-compose -f docker-compose.staging.yml push
       
