@@ -16,7 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Run docker compose build
-        run: docker-compose -f docker-compose.staging.yml build 
+        run:  docker-compose -f docker-compose.staging.yml build 
+      - name: Docker login     
+        run:  docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Push docker images to dockerhub
-        run: docker-compose -f docker-compose.staging.yml push
-      
+        run:  docker-compose -f docker-compose.staging.yml push
