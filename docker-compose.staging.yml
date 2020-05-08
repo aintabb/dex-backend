@@ -1,19 +1,22 @@
 version: '3.6'
 services:
   api:
-    build: ./API
+    build: 
+      context: .
+      dockerfile: API/Dockerfile
+    image: digitalexcellence/api
     ports: 
       - 5000:80
     depends_on:
       - db
     networks:
       - mssql-network
-      - web
+      - web 
     environment:
       - ConnectionStrings__DefaultConnection=${STAGING_CONNECTION_STRING} 
       - App__Frontend__FrontendUrl=https://staging.dex.software 
       - App__Frontend__ClientId=${STAGING_API_FRONTEND_CLIENT_ID}
-      - App__Frontend__ClientSecret=${STAGING_API_FRONTEND_CLIENT_SECRET} 
+      - App__Frontend__ClientSecret=${STAGING_API_FRONTEND_CLIENT_SECRET}  
       - App__IdentityServer__IdentityUrl=https://identity.staging.dex.software
     labels:
       - traefik.backend=api
@@ -23,6 +26,7 @@ services:
       
   db:
     build: ./Data
+    image: digitalexcellence/database
     ports:
       - 1433:1433
     networks:
@@ -32,7 +36,10 @@ services:
       - MSSQL_SA_PASSWORD=${STAGING_DATABASE_PASSWORD}
 
   identity:
-    build: ./IdentityServer
+    build:
+      context: .
+      dockerfile: IdentityServer/Dockerfile
+    image: digitalexcellence/identity
     ports: 
       - 5005:80
     networks:
