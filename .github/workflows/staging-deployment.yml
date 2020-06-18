@@ -2,7 +2,7 @@ name: Staging Deployment
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ fix/open-id-config ]
 
 jobs:
   build:

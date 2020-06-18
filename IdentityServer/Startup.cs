@@ -90,6 +90,7 @@ namespace IdentityServer
                                                              true;
                                                          options.Events.RaiseFailureEvents = true;
                                                          options.Events.RaiseSuccessEvents = true;
+                                                         options.PublicOrigin = "https://identity.staging.dex.software";
                                                          if(Environment.IsDevelopment())
                                                          {
                                                              options.IssuerUri = Config.Self.IssuerUri;
