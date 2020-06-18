@@ -24,5 +24,5 @@ It can be a central place where all project proposals can be gathered. Internshi
 SUGGEST  
 DeX can suggest interesting projects for you as a person, based on interest such as techniques, a certain topic or based on the collaborators which (some of them) you follow and/or share the same interests. This way you will be informed and up-to-date with the latest news and trends.  
  
-### Getting Started
+### Getting Started.
 [This](https://github.com/DigitalExcellence/dex-backend/wiki/Getting-Started) wiki article describes the steps and tools that are necessary in order to run the backend services locally.
